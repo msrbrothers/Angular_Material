@@ -19,6 +19,7 @@ import {MatButtonModule,
   MatAutocompleteModule,
   MatDatepickerModule,
   MatNativeDateModule,
+  MatTooltipModule,
 } from '@angular/material'
 import {MatBadgeModule} from '@angular/material/badge'
 const MaterialComponent = [
@@ -41,7 +42,8 @@ const MaterialComponent = [
     MatSelectModule,
     MatAutocompleteModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTooltipModule
 ];
 @NgModule({
   imports: [
