@@ -1,0 +1,22 @@
+/* mat-icon{
+    margin-left: 2em !important;
+} */
+button{
+    margin-left: 2em !important;
+}
+.center{
+    margin: 10em !important;
+}
+.right{
+    margin: 2em !important;
+
+}
+.main{
+    margin: 4em !important;
+}
+mat-grid-tile{
+    background-color: aquamarine;
+}
+mat-divider{
+    margin-bottom: 2em !important;
+}

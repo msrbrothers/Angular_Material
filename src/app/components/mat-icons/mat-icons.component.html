@@ -1,0 +1,68 @@
+<!-- https://material.io/tools/icons/?style=baseline -->
+<mat-divider></mat-divider>
+<button color="primary" (click)="iconOpen()" mat-raised-button>open mat-icon</button>
+<button color="accent" (click)="manuOpen()" mat-stroked-button>open mat-manu</button>
+<button color="primary" (click)="gridopen()" mat-raised-button>open mat-grid</button>
+<div *ngIf="icon" class="main">
+    <mat-icon>dashboard</mat-icon><br>
+    <mat-icon>explore</mat-icon><br>
+    <mat-icon>explore_off</mat-icon><br>
+    <mat-icon>done_outline</mat-icon><br>
+    <mat-icon>done_all</mat-icon><br>
+    <mat-icon>copyright</mat-icon><br>
+    <mat-icon>delete</mat-icon><br>
+    <mat-icon>delete_outline</mat-icon><br>
+    <mat-icon>delete_foreve</mat-icon><br>
+    <mat-icon>android</mat-icon><br>
+    <mat-icon>assignment_returned</mat-icon><br>
+    <mat-icon>build</mat-icon><br>
+    <button color="primary" mat-raised-button>
+        <mat-icon>done_all</mat-icon>primary
+    </button>
+    <button color="accent" mat-stroked-button>
+        <mat-icon>delete</mat-icon>accent
+    </button>
+</div>
+<div *ngIf="manu"  class="main">
+    <mat-menu #appManu="matMenu" xPosition="after" yPosition="above">
+        <label mat-menu-item>Item 1</label>
+        <label mat-menu-item [matMenuTriggerFor]="appChildMemu">Item 2</label>
+        <label mat-menu-item>Item 3</label>
+    </mat-menu>
+
+
+    <button mat-flat-button class="center" [matMenuTriggerFor]="appManu">Menu</button>
+
+    <mat-menu #appChildMemu="matMenu">
+        <label mat-menu-item>Item 1.1</label>
+        <label mat-menu-item>Item 1.2</label>
+        <label mat-menu-item>Item 1.3</label>
+    </mat-menu>
+
+    <mat-menu #lazyMenu="matMenu">
+        <ng-template matMenuContent let-name="name" let-hobby="hobby">
+            <label mat-menu-item>setting</label>
+            <label mat-menu-item>Hobby is {{hobby}}</label>
+            <label mat-menu-item>log out {{name}}</label>
+        </ng-template>
+    </mat-menu>
+
+    <button mat-raised-button class="right"[matMenuTriggerData]="{name : 'ram',hobby : 'cricket'}" [matMenuTriggerFor]="lazyMenu">Ram</button>
+    <button mat-raised-button class="right" [matMenuTriggerData]="{name : 'ravi', hobby : 'footboll'}" [matMenuTriggerFor]="lazyMenu">Ravi</button>
+</div>
+<div *ngIf="grid"  class="main">
+    <mat-grid-list cols="6">
+        <mat-grid-tile>Tile 1</mat-grid-tile>
+        <mat-grid-tile>Tile 2</mat-grid-tile>
+        <mat-grid-tile>Tile 3</mat-grid-tile>
+        <mat-grid-tile>Tile 4</mat-grid-tile>
+        <mat-grid-tile>Tile 5</mat-grid-tile>
+        <mat-grid-tile>Tile 6</mat-grid-tile>
+        <mat-grid-tile>Tile 7</mat-grid-tile>
+        <mat-grid-tile>Tile 8</mat-grid-tile>
+        <mat-grid-tile>Tile 9</mat-grid-tile>
+        <mat-grid-tile>Tile 10</mat-grid-tile>
+        <mat-grid-tile>Tile 11</mat-grid-tile>
+        <mat-grid-tile>Tile 12</mat-grid-tile>
+    </mat-grid-list>
+</div>

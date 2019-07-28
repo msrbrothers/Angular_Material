@@ -1,0 +1,67 @@
+<mat-divider></mat-divider>
+<button color="primary" (click)="formInputOpen()" mat-raised-button>open mat-formInput</button>
+<!-- <button color="accent" (click)="spinnerOpen()" mat-stroked-button>open mat-spinner</button> -->
+<button color="primary" (click)="typographyOpen()" mat-raised-button>open mat-typography</button>
+<div *ngIf="typography">
+  <div class="mat-display-4">mat-display-4</div>
+  <div class="mat-display-3">mat-display-3</div>
+  <div class="mat-display-2">mat-display-2</div>
+  <div class="mat-display-1">mat-display-2</div>
+
+  <div class="mat-headline">mat-headline</div>
+  <div class="mat-title">mat-title</div>
+  <div class="mat-subheading-2">mat-subheading-2</div>
+  <div class="mat-subheading-1">mat-subheading-1</div>
+
+  <div class="mat-body-1">mat-body-1</div>
+  <div class="mat-body-2">mat-body-2</div>
+  <div class="mat-caption">mat-caption</div>
+  <div class="mat-typography">
+    <h1> This is a heading for h1</h1>
+    <h2>This is a heading for h2</h2>
+    <h3>This is a heading for h3</h3>
+    <h4>This is a heading for h4</h4>
+  </div>
+</div>
+<div *ngIf="formInput">
+  <mat-form-field floatLabel="auto" appearance="fill" color="accent">
+    <mat-label>Name</mat-label>
+    <input matInput required>
+    <mat-hint align="end">Min 5 Charactor</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field floatLabel="auto" appearance="outline" color="warn">
+    <mat-label>Name</mat-label>
+    <input matInput required>
+    <mat-hint align="end">Min 5 Charactor</mat-hint>
+  </mat-form-field>
+  <br>
+  <mat-form-field floatLabel="auto" appearance="outline" color="warn">
+    <mat-label>Select one</mat-label>
+    <mat-select [(value)]="selectedValue" matInput required multiple>
+      <mat-option>None</mat-option>
+      <mat-optgroup label="label 1">
+        <mat-option value="Ravi">Ravi</mat-option>
+        <mat-option value="Ram">Ram</mat-option>
+      </mat-optgroup>
+      <mat-optgroup label="label 2">
+        <mat-option value="Raj">Raj</mat-option>
+        <mat-option   *ngFor="let item of optionsAutocomplete" value="Sachin">{{item}}</mat-option>
+      </mat-optgroup>
+    </mat-select>
+
+  </mat-form-field>
+  {{selectedValue}}
+  <br>
+  <form>
+    <mat-form-field>
+      <input type="text" matInput [matAutocomplete]="auto" [formControl]="MyControl"/>
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let item of optionsAutocomplete" [value]="item">
+          {{item}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+
+</div>

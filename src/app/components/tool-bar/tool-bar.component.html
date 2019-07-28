@@ -1,0 +1,31 @@
+
+<mat-divider></mat-divider>
+<div *ngIf="toolbar">
+    <mat-toolbar color="primary" class="navbar">
+        <span><button (click)="sideBar()" color="primary" mat-raised-button>toolBar</button></span>
+        <div>
+            <span>Home</span>
+            <span>About</span>
+            <span>Services</span>
+        </div>
+    </mat-toolbar>
+</div>
+<div *ngIf="sidebar">
+    <mat-sidenav-container>
+        <mat-sidenav #sidenav mode="push" [(opened)]="opened">sidenav</mat-sidenav>
+        <!-- 
+    we can use this mode also
+    mode="side"
+    mode="over"
+ -->
+        <!--
+     also we can use of the method to open and close side bar then we have to give the refrence name with #
+     mathod are :- (click)="refName.open()"
+      (click)="refName.close()
+    -->
+        <mat-sidenav-content>
+            <button (click)="toolBar()" color="primary" mat-raised-button>toolBar</button>
+            <button (click)="opened=!opened" color="primary" mat-raised-button>open sidebar</button>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

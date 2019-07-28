@@ -1,0 +1,12 @@
+.badge{
+    padding: 1em !important;
+}
+.badgeGroup{
+    margin-left: 2em !important;
+}
+button{
+    margin: 1em !important;
+}
+mat-divider{
+    margin-bottom: 2em !important;
+}

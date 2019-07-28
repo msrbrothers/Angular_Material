@@ -1,0 +1,86 @@
+
+<mat-divider></mat-divider>
+
+<button color="primary" (click)="stepperOpen()" mat-raised-button>open mat-stepper</button>
+<button color="accent" (click)="spinnerOpen()" mat-stroked-button>open mat-spinner</button>
+<button color="primary" (click)="badgeOpen()" mat-raised-button>open mat-badge</button>
+<div *ngIf="badge">
+    <div class="badgeGroup">
+        <div class="badge">
+            <span matBadge="5" matBadgePosition="below before" matBadgeSize="small" matBadgeColor="warn">Notifications</span>
+        </div>
+        <div class="badge">
+            <span matBadge="5" matBadgePosition="below after" matBadgeSize="medium" matBadgeColor="primary">Notifications</span>
+        </div>
+        <div class="badge">
+            <span [matBadge]="" matBadgePosition="above before" matBadgeSize="large" matBadgeColor="accent">Notifications</span>
+        </div>
+        <div class="badge">
+            <span matBadge="5" matBadgePosition="above after" matBadgeColor="primary">Notifications</span>
+        </div>
+        <div class="badge">
+                <span matBadge="5" matBadgePosition="above after" matBadgeColor="primary" matBadgeOverlap="false">Notifications</span>
+        </div>
+    </div>
+</div>
+<div *ngIf="spinner">
+    <div class="spinner">
+        <mat-spinner *ngIf="showSpinner" color="accent"></mat-spinner>
+        <button (click)="loadSpinnet()" color="warn" mat-raised-button >matSpinner</button>
+     </div>
+</div>
+<div *ngIf="stepper">
+      <!-- if we want to step-by-step don't jumpone stap to three then we have to follow two step linear and  completed="false" that we are using  -->
+      <!-- if we add optional then it will not depand on  completed="true" or "false" -->
+    <mat-horizontal-stepper linear>
+        <mat-step label="Shipping Address" completed="true">
+            <p>Shipping Address Details</p>
+            <div>
+                <button  mat-raised-button matStepperPrevious>Back</button>
+                <button  mat-raised-button matStepperNext>Next</button>
+            </div>
+        </mat-step>
+        <mat-step label="Billing Address"  completed="false" optional>
+            <p>Billing Address Details</p>
+            <div>
+                <button  mat-raised-button matStepperPrevious>Back</button>
+                <button  mat-raised-button matStepperNext>Next</button>
+            </div>
+        </mat-step>
+        <mat-step label="Place order"  completed="false">
+            <p>Order Details</p>
+            <div>
+                <button  mat-raised-button matStepperPrevious>Back</button>
+                <button  mat-raised-button matStepperNext>Next</button>
+            </div>
+        </mat-step>
+    </mat-horizontal-stepper>
+    <h4>Vertical Stepper</h4>
+    <mat-vertical-stepper linear>
+            <mat-step label="Shipping Address" completed="true">
+                <p>Shipping Address Details</p>
+                <div>
+                    <button  mat-raised-button matStepperPrevious>Back</button>
+                    <button  mat-raised-button matStepperNext>Next</button>
+                </div>
+            </mat-step>
+            <mat-step label="Billing Address"  completed="false" optional>
+                <p>Billing Address Details</p>
+                <div>
+                    <button  mat-raised-button matStepperPrevious>Back</button>
+                    <button  mat-raised-button matStepperNext>Next</button>
+                </div>
+            </mat-step>
+            <mat-step label="Place order"  completed="false">
+                <p>Order Details</p>
+                <div>
+                    <button  mat-raised-button matStepperPrevious>Back</button>
+                    <button  mat-raised-button matStepperNext>Next</button>
+                </div>
+            </mat-step>
+        </mat-vertical-stepper>
+</div>
+
+<div [style.display]=" spinner === true ? 'block' : 'none'">
+   tasting tarnary oprator done "display: block"
+</div>

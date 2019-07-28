@@ -1,0 +1,136 @@
+<mat-divider></mat-divider>
+<button color="primary" (click)="buttonOpen()" mat-raised-button>open mat-button</button>
+<button color="accent" (click)="panelOpen()" mat-stroked-button>open mat-panel</button>
+<button color="primary" (click)="cardOpen()" mat-raised-button>open mat-card</button>
+<div *ngIf="button">
+    <button mat-button>mat-button</button>
+    <button mat-raised-button>mat-raised-button</button>
+    <button mat-flat-button>mat-flat-button</button>
+    <button mat-stroked-button>mat-stroked-button</button>
+    <div style="margin-top:4em">
+        <button mat-icon-button>ico</button>
+        <button mat-fab>fab</button>
+        <button mat-mini-fab>min</button>
+    </div>
+    <div style="margin-top:4em">
+        <button color="primary" mat-button>primary</button>
+        <button color="accent" disableRipple mat-button>accent</button>
+        <button color="warn" mat-raised-button>warn</button>
+        <button color="primary" mat-raised-button>primary</button>
+        <button color="accent" mat-stroked-button>accent</button>
+        <button color="warn" mat-stroked-button>warn</button>
+    </div>
+
+    <div>
+        <mat-button-toggle #toggleBtn>toggle</mat-button-toggle>
+        <div class="mat-body-1"> {{toggleBtn.checked}}</div>
+    </div>
+
+    <div>
+        <mat-button-toggle-group #toggleGroup="matButtonToggleGroup">
+            <mat-button-toggle value="ravi">ravi</mat-button-toggle>
+            <mat-button-toggle value="ram">ram</mat-button-toggle>
+            <mat-button-toggle value="sachin">sachin</mat-button-toggle>
+        </mat-button-toggle-group>
+        <div class="mat-body-1"> {{toggleGroup.value}}</div>
+    </div>
+
+    <div>
+        <mat-button-toggle-group #toggleGroupmultiple="matButtonToggleGroup" multiple>
+            <mat-button-toggle value="ravi">ravi</mat-button-toggle>
+            <mat-button-toggle value="ram">ram</mat-button-toggle>
+            <mat-button-toggle value="sachin">sachin</mat-button-toggle>
+        </mat-button-toggle-group>
+        <div class="mat-body-1"> {{toggleGroupmultiple.value}}</div>
+    </div>
+
+</div>
+<div *ngIf="panel">
+    <h4>simple panel</h4>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Angular Fundamental 1
+            </mat-panel-title>
+            <mat-panel-description>
+                Total duration : 3 hours
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>this is the panel contant. add course details 1</p>
+        <mat-action-row>
+            <button mat-button>scroll me</button>
+        </mat-action-row>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Angular Fundamental 2
+            </mat-panel-title>
+            <mat-panel-description>
+                Total duration : 2 hours
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>this is the panel contant. add course details 2</p>
+        <mat-action-row>
+            <button mat-button>scroll me</button>
+        </mat-action-row>
+    </mat-expansion-panel>
+    <h4> accordion panel Example.</h4>
+    <!-- more funcion add in mat-accordion  tag
+multi="true" : - it will work like simple panel
+hedeToggle : then hide toggle icon -->
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Angular Fundamental 1
+                </mat-panel-title>
+                <mat-panel-description>
+                    Total duration : 3 hours
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>this is the panel contant. add course details 1</p>
+            <mat-action-row>
+                <button mat-button>scroll me</button>
+            </mat-action-row>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Angular Fundamental 2
+                </mat-panel-title>
+                <mat-panel-description>
+                    Total duration : 2 hours
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>this is the panel contant. add course details 2</p>
+            <mat-action-row>
+                <button mat-button>scroll me</button>
+            </mat-action-row>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+</div>
+
+<div *ngIf="card">
+    <mat-card>
+        <mat-card-title>this is card title</mat-card-title>
+        <mat-card-content>this is card content</mat-card-content>
+        <mat-card-actions align="end">
+            <button color="primary" mat-raised-button>login</button>
+        </mat-card-actions>
+    </mat-card>
+    <button color="primary"  (click)="tabOpen()" mat-raised-button>open mat-tabs</button>
+    <div *ngIf="tab">
+        <mat-tab-group #tabRef (selectedTabChange)="logChange(tabRef.selectedIndex)">
+            <mat-tab label="ram">ram tab</mat-tab>
+            <mat-tab label="ravi">ravi tab</mat-tab>
+            <mat-tab label="sachin">sachin tab</mat-tab>
+            <mat-tab label="prince">Princ tab</mat-tab>
+            
+        </mat-tab-group>
+        {{tabRef.selectedIndex}}
+    </div>
+</div>
