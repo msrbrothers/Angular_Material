@@ -17,6 +17,8 @@ import {MatButtonModule,
   MatInputModule,
   MatSelectModule,
   MatAutocompleteModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
 } from '@angular/material'
 import {MatBadgeModule} from '@angular/material/badge'
 const MaterialComponent = [
@@ -37,7 +39,9 @@ const MaterialComponent = [
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatDatepickerModule,
+    MatNativeDateModule
 ];
 @NgModule({
   imports: [

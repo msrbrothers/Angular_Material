@@ -57,11 +57,24 @@
     <mat-form-field>
       <input type="text" matInput [matAutocomplete]="auto" [formControl]="MyControl"/>
       <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-        <mat-option *ngFor="let item of optionsAutocomplete | async" [value]="item">
+        <mat-option *ngFor="let item of optionsAutocomplete " [value]="item">
           {{item}}
         </mat-option>
       </mat-autocomplete>
     </mat-form-field>
   </form>
+  <button color="primary" (click)="datePickerOpen()" mat-raised-button>open mat-datePicker</button>
+  <div *ngIf="datePicker">
+    <mat-form-field>
+        <!-- add this property to control min and max date add in input field
+        [min]="minDate" [max]="maxDate" -->
+      <input matInput [matDatepicker]="myDatePicker" [matDatepickerFilter]="dateFilter" >
+      <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
+      <!-- we can add property from were you want to start add in mat-datepicker
+      property 1. : startView="year" 
+      property 1. :  startView="multi-year"    -->
+      <mat-datepicker #myDatePicker ></mat-datepicker>
+    </mat-form-field>
+  </div>
 
 </div>

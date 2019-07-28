@@ -8,8 +8,20 @@ import { map, startWith} from 'rxjs/operators';
   styleUrls: ['./typography.component.css']
 })
 export class TypographyComponent implements OnInit {
+
+  // steart datePicker
+  minDate = new Date();
+  maxDate = new Date(2019,7,2);
+   
+
+  dateFilter = date =>{
+    const day = date.getDay();
+    return day !==0 && day !== 6;
+  }
+    // End DatePicker
   typography: boolean = false;
   formInput: boolean = false;
+  datePicker : boolean = false;
   selectedValue : string ;
   optionsAutocomplete : string[] = ['ravi','ram','sachin'];
   optionsAutocompleteObject = [
@@ -19,7 +31,9 @@ export class TypographyComponent implements OnInit {
     {name : 'sachin'},
   ];
   filteredOption : Observable<string[]>;
-  constructor() { }
+  constructor() { 
+   // alert(new Date(2019,6,31))
+  }
    
   MyControl = new FormControl();
   ngOnInit() {
@@ -44,5 +58,8 @@ export class TypographyComponent implements OnInit {
   typographyOpen() {
     this.formInput = false;
     this.typography = true;
+  }
+  datePickerOpen(){
+    this.datePicker = true;
   }
 }
