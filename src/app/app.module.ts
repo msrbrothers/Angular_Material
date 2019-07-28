@@ -10,7 +10,8 @@ import { MatIconsComponent } from './components/mat-icons/mat-icons.component';
 import { MatBadgeComponent } from './components/mat-badge/mat-badge.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { ToolBarComponent } from './components/tool-bar/tool-bar.component';
-import {FormsModule,ReactiveFormsModule} from '@angular/forms'
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { DialogExampleComponent } from './components/dialog-example/dialog-example.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,11 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms'
     MatIconsComponent,
     MatBadgeComponent,
     WelcomePageComponent,
-    ToolBarComponent
+    ToolBarComponent,
+    DialogExampleComponent
+  ],
+  entryComponents :[
+    DialogExampleComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule,
   MatButtonToggleModule,
   MatIconModule,
@@ -43,7 +44,8 @@ const MaterialComponent = [
     MatAutocompleteModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatDialogModule
 ];
 @NgModule({
   imports: [
