@@ -45,7 +45,7 @@
         <mat-option value="Ram">Ram</mat-option>
       </mat-optgroup>
       <mat-optgroup label="label 2">
-        <mat-option value="Raj">Raj</mat-option>
+        <mat-option value="Raj">Raj</mat-option> 
         <mat-option   *ngFor="let item of optionsAutocomplete" value="Sachin">{{item}}</mat-option>
       </mat-optgroup>
     </mat-select>
@@ -56,8 +56,8 @@
   <form>
     <mat-form-field>
       <input type="text" matInput [matAutocomplete]="auto" [formControl]="MyControl"/>
-      <mat-autocomplete #auto="matAutocomplete">
-        <mat-option *ngFor="let item of optionsAutocomplete" [value]="item">
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+        <mat-option *ngFor="let item of optionsAutocomplete | async" [value]="item">
           {{item}}
         </mat-option>
       </mat-autocomplete>

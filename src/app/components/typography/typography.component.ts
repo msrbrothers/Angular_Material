@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl} from '@angular/forms';
-import {Observable} from  'rxjs';
+import {Observable, Subject} from  'rxjs';
 import { map, startWith} from 'rxjs/operators';
 @Component({
   selector: 'app-typography',
@@ -12,6 +12,12 @@ export class TypographyComponent implements OnInit {
   formInput: boolean = false;
   selectedValue : string ;
   optionsAutocomplete : string[] = ['ravi','ram','sachin'];
+  optionsAutocompleteObject = [
+    {name : 'ravi'},
+    {name : 'ram'},
+    {name : 'raj'},
+    {name : 'sachin'},
+  ];
   filteredOption : Observable<string[]>;
   constructor() { }
    
@@ -22,6 +28,9 @@ export class TypographyComponent implements OnInit {
       map(value => this._filter(value))
     )
   }
+  displayFn(subject){
+    return subject ? subject.name :undefined;
+  }
    private _filter(value : string): string[]{
      const filerValue = value.toLowerCase();
      return this.optionsAutocomplete.filter(option =>{
@@ -29,7 +38,7 @@ export class TypographyComponent implements OnInit {
      })
    }
   formInputOpen() {
-    this.formInput = true;
+    this.formInput = true; 
     this.typography = false;
   }
   typographyOpen() {
